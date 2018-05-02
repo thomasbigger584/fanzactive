@@ -19,6 +19,7 @@ class FanzActiveApplication extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: colorPrimary,
         accentColor: colorAccent,
+        fontFamily: 'Roboto',
       ),
       home: new LoginSplash(),
       debugShowCheckedModeBanner: false,
