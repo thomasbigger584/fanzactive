@@ -1,4 +1,5 @@
 import 'package:fanzactive/colors.dart';
+import 'package:fanzactive/screens/button/PrimaryLightOutlineButton.dart';
 import 'package:flutter/material.dart';
 
 class LoginSplash extends StatelessWidget {
@@ -37,25 +38,9 @@ class LoginSplash extends StatelessWidget {
   Widget buildButton() {
     return new Container(
       margin: const EdgeInsets.only(left: 30.0, right: 30.0, top: 40.0),
-      child: new Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          new Container(
-            height: 50.0,
-            decoration: new BoxDecoration(
-              border: new Border.all(color: colorWhite, width: 0.3),
-            ),
-            child: new FlatButton(
-              color: colorTransparent,
-              highlightColor: colorTransparent,
-              splashColor: colorPrimary,
-              colorBrightness: Brightness.light,
-              textColor: colorWhite,
-              onPressed: onLoginButtonPress,
-              child: new Text("Login"),
-            ),
-          ),
-        ],
+      child: new LoginSplashButton(
+        text: "Login",
+        onPressed: onLoginButtonPress,
       ),
     );
   }

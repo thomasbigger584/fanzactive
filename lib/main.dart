@@ -1,5 +1,5 @@
 import 'package:fanzactive/colors.dart';
-import 'package:fanzactive/screens/loginsplash/loginsplash.dart';
+import 'package:fanzactive/screens/loginsplash/LoginSplash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
