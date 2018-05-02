@@ -8,11 +8,10 @@ void main() {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
-  runApp(new MyApp());
+  runApp(new FanzActiveApplication());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class FanzActiveApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -20,11 +19,12 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: colorPrimary,
         accentColor: colorAccent,
-        primarySwatch: Colors.blue,
       ),
       home: new LoginSplash(),
       debugShowCheckedModeBanner: false,
-      routes: <String, WidgetBuilder>{},
+      routes: <String, WidgetBuilder>{
+        
+      },
     );
   }
 }
