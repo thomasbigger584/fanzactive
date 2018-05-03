@@ -1,11 +1,11 @@
 import 'package:fanzactive/colors.dart';
 import 'package:flutter/material.dart';
 
-class LoginSplashButton extends StatelessWidget {
+class PrimaryLightOutlineButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
 
-  const LoginSplashButton({Key key, this.onPressed, this.text})
+  const PrimaryLightOutlineButton({Key key, this.onPressed, this.text})
       : super(key: key);
 
   @override

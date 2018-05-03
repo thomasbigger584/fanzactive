@@ -22,14 +22,14 @@ class LoginSplash extends StatelessWidget {
   BoxDecoration buildBackgroundGradient() {
     return new BoxDecoration(
         gradient: new RadialGradient(
-            colors: [colorPrimary, colorPrimaryDark], radius: 1.8));
+            colors: [colorPrimary, colorPrimaryDark], radius: 0.8));
   }
 
   Widget buildLogo() {
     return new Container(
       margin: EdgeInsets.symmetric(horizontal: 90.0),
       child: new Image.asset(
-        "res/assets/images/fanzactiveLightAlt-lg.png",
+        "res/assets/images/fanzactiveDarkAlt-lg.png",
         gaplessPlayback: true,
       ),
     );
@@ -38,7 +38,7 @@ class LoginSplash extends StatelessWidget {
   Widget buildButton() {
     return new Container(
       margin: const EdgeInsets.only(left: 30.0, right: 30.0, top: 40.0),
-      child: new LoginSplashButton(
+      child: new PrimaryLightOutlineButton(
         text: "Login",
         onPressed: onLoginButtonPress,
       ),
