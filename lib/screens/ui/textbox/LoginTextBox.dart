@@ -15,12 +15,21 @@ class LoginTextBox extends StatelessWidget {
     return new Container(
       height: 50.0,
       child: new TextFormField(
+        style: new TextStyle(color: colorWhite),
         decoration: new InputDecoration(
           labelText: hintText,
-          labelStyle: TextStyle(color: colorWhite),
+          labelStyle: new TextStyle(
+            color: colorWhite,
+          ),
+          prefixIcon: new Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: new Icon(
+              Icons.supervised_user_circle,
+              color: colorWhite,
+            ),
+          ),
           border: new OutlineInputBorder(
-            borderRadius: BorderRadius.circular(1.0),
-            borderSide: new BorderSide(color: colorWhite, width: 0.3),
+            borderRadius: BorderRadius.zero,
           ),
         ),
         obscureText: obscureText,
