@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 AlertDialog buildDialog(
     {title, message, confirm, cancel, confirmFn, cancelFn}) {
-
   /*
    * Widgets for title and message
    */

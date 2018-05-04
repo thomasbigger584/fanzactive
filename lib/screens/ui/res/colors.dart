@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-Color colorWhite = const  Color(0xFFFFFFFF);
+Color colorWhite = const Color(0xFFFFFFFF);
 
 Color colorTransparent = const Color(0x00000000);
 

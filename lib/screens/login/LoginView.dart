@@ -1,26 +1,17 @@
-import 'package:fanzactive/colors.dart';
+import 'package:fanzactive/screens/login/LoginContract.dart';
 import 'package:fanzactive/screens/ui/LoginBackgroundGradient.dart';
 import 'package:fanzactive/screens/ui/button/PrimaryLightOutlineButton.dart';
+import 'package:fanzactive/screens/ui/res/colors.dart';
 import 'package:fanzactive/screens/ui/textbox/LoginTextBox.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+class LoginViewImpl implements LoginView {
   @override
-  Widget build(BuildContext context) {
+  Widget buildContent() {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Login"),
-        textTheme: new TextTheme(
-          title: new TextStyle(
-              inherit: true,
-              color: colorWhite,
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold),
-        ),
-        iconTheme: new IconThemeData(color: colorWhite),
-      ),
+      appBar: buildAppBar,
       body: new Container(
-        decoration: buildLoginBackgroundGradient(),
+        decoration: buildLoginBackgroundGradient,
         child: new Container(
           margin: const EdgeInsets.only(left: 30.0, right: 30.0, top: 40.0),
           child: new Column(
@@ -48,6 +39,20 @@ class Login extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  AppBar get buildAppBar {
+    return new AppBar(
+      title: new Text("Login"),
+      textTheme: new TextTheme(
+        title: new TextStyle(
+            inherit: true,
+            color: colorWhite,
+            fontSize: 18.0,
+            fontWeight: FontWeight.bold),
+      ),
+      iconTheme: new IconThemeData(color: colorWhite),
     );
   }
 }

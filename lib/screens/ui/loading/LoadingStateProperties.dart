@@ -1,4 +1,3 @@
-
 /*
  * Abstract (interface) which binds the loading widgets for the view
  */

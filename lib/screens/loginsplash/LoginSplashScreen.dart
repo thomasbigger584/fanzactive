@@ -1,4 +1,4 @@
-import 'package:fanzactive/screens/login/Login.dart';
+import 'package:fanzactive/screens/login/LoginScreen.dart';
 import 'package:fanzactive/screens/ui/LoginBackgroundGradient.dart';
 import 'package:fanzactive/screens/ui/button/PrimaryLightOutlineButton.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +7,7 @@ class LoginSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      decoration: buildLoginBackgroundGradient(),
+      decoration: buildLoginBackgroundGradient,
       child: new Center(
         child: new Column(
           mainAxisSize: MainAxisSize.min,
