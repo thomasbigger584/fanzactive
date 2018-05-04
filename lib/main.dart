@@ -1,4 +1,5 @@
 import 'package:fanzactive/colors.dart';
+import 'package:fanzactive/screens/login/Login.dart';
 import 'package:fanzactive/screens/loginsplash/LoginSplash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,12 +20,13 @@ class FanzActiveApplication extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: colorPrimary,
         accentColor: colorAccent,
+
         fontFamily: 'Roboto',
       ),
       home: new LoginSplash(),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        
+        "/login": (context) => new Login(),
       },
     );
   }

@@ -43,7 +43,7 @@ class PrimaryLightOutlineState extends State<PrimaryLightOutlineButton> {
               highlightColor: buttonBackgroundColor,
               splashColor: buttonBackgroundColor,
               textColor: colorWhite,
-              onPressed: () => {},
+              onPressed: onPressed,
               child: new Text(text),
             ),
           ),

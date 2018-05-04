@@ -1,28 +1,23 @@
-import 'package:fanzactive/colors.dart';
-import 'package:fanzactive/screens/button/PrimaryLightOutlineButton.dart';
+import 'package:fanzactive/screens/login/Login.dart';
+import 'package:fanzactive/screens/ui/LoginBackgroundGradient.dart';
+import 'package:fanzactive/screens/ui/button/PrimaryLightOutlineButton.dart';
 import 'package:flutter/material.dart';
 
 class LoginSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      decoration: buildBackgroundGradient(),
+      decoration: buildLoginBackgroundGradient(),
       child: new Center(
         child: new Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             buildLogo(),
-            buildButton(),
+            buildButton(context),
           ],
         ),
       ),
     );
-  }
-
-  BoxDecoration buildBackgroundGradient() {
-    return new BoxDecoration(
-        gradient: new RadialGradient(
-            colors: [colorPrimary, colorPrimaryDark], radius: 0.8));
   }
 
   Widget buildLogo() {
@@ -35,17 +30,17 @@ class LoginSplash extends StatelessWidget {
     );
   }
 
-  Widget buildButton() {
+  Widget buildButton(BuildContext context) {
     return new Container(
       margin: const EdgeInsets.only(left: 30.0, right: 30.0, top: 40.0),
       child: new PrimaryLightOutlineButton(
         text: "Login",
-        onPressed: onLoginButtonPress,
+        onPressed: () {
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new Login()));
+          print("Login Pressed");
+        },
       ),
     );
-  }
-
-  void onLoginButtonPress() {
-    print("Login Button press");
   }
 }
