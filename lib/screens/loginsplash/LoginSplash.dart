@@ -38,7 +38,6 @@ class LoginSplash extends StatelessWidget {
         onPressed: () {
           Navigator.push(context,
               new MaterialPageRoute(builder: (context) => new Login()));
-          print("Login Pressed");
         },
       ),
     );
