@@ -10,7 +10,15 @@ class LoginPresenterImpl extends LoginPresenter {
   LoginPresenterImpl(this.view);
 
   @override
-  VoidCallback initView(LoginState state) => () {
+  VoidCallback onInitView(LoginState state) => () {
         this.state = state;
+        view.loginCallback = login;
       };
+
+  @override
+  void login(String username, String password) {
+    reState(() {
+      print("Username: " + username + " Password: " + password);
+    });
+  }
 }

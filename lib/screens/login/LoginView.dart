@@ -6,6 +6,11 @@ import 'package:fanzactive/screens/ui/textbox/LoginTextBox.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewImpl implements LoginView {
+  BuildContext context;
+  LoginCallback _loginCallback;
+
+  LoginViewImpl(this.context);
+
   @override
   Widget buildContent() {
     return new Scaffold(
@@ -31,7 +36,7 @@ class LoginViewImpl implements LoginView {
               new Container(
                 margin: EdgeInsets.only(top: 30.0),
                 child: new PrimaryLightOutlineButton(
-                  onPressed: () {},
+                  onPressed: () => loginCallback(),
                   text: "Login",
                 ),
               ),
@@ -55,4 +60,14 @@ class LoginViewImpl implements LoginView {
       iconTheme: new IconThemeData(color: colorWhite),
     );
   }
+
+  @override
+  // ignore: unnecessary_getters_setters
+  set loginCallback(LoginCallback loginCallback) {
+    _loginCallback = loginCallback;
+  }
+
+  @override
+  // ignore: unnecessary_getters_setters
+  get loginCallback => _loginCallback;
 }

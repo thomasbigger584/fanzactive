@@ -15,7 +15,7 @@ class LoginState extends State<Login> {
   @override
   void initState() {
     super.initState();
-    view = new LoginViewImpl();
+    view = new LoginViewImpl(context);
     presenter = new LoginPresenterImpl(view);
     presenter.initView(this);
   }

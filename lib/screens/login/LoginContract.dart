@@ -1,6 +1,14 @@
 import 'package:fanzactive/screens/login/LoginScreen.dart';
 import 'package:fanzactive/screens/mvp/BaseMvpContract.dart';
 
-abstract class LoginView extends View {}
+abstract class LoginView extends View {
+  get loginCallback;
 
-abstract class LoginPresenter extends Presenter<LoginState> {}
+  set loginCallback(LoginCallback loginCallback);
+}
+
+typedef void LoginCallback(String username, String password);
+
+abstract class LoginPresenter extends Presenter<LoginState> {
+  void login(String username, String password);
+}
