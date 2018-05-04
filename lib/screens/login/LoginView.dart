@@ -36,7 +36,7 @@ class LoginViewImpl implements LoginView {
               new Container(
                 margin: EdgeInsets.only(top: 30.0),
                 child: new PrimaryLightOutlineButton(
-                  onPressed: () => loginCallback(),
+                  onPressed: _loginCallback,
                   text: "Login",
                 ),
               ),
