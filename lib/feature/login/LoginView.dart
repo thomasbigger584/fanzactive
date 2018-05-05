@@ -1,12 +1,14 @@
-import 'package:fanzactive/screens/login/LoginContract.dart';
-import 'package:fanzactive/screens/login/LoginPresenter.dart';
-import 'package:fanzactive/screens/ui/LoginBackgroundGradient.dart';
-import 'package:fanzactive/screens/ui/button/PrimaryLightOutlineButton.dart';
-import 'package:fanzactive/screens/ui/res/colors.dart';
-import 'package:fanzactive/screens/ui/textbox/LoginTextBox.dart';
+import 'package:fanzactive/feature/login/LoginContract.dart';
+import 'package:fanzactive/feature/login/LoginPresenter.dart';
+import 'package:fanzactive/feature/ui/LoginBackgroundGradient.dart';
+import 'package:fanzactive/feature/ui/button/PrimaryLightOutlineButton.dart';
+import 'package:fanzactive/feature/ui/res/colors.dart';
+import 'package:fanzactive/feature/ui/textbox/LoginTextBox.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatefulWidget {
+  static const String ROUTE_NAME = "/login";
+
   @override
   LoginViewState createState() => new LoginViewState();
 }
@@ -71,12 +73,12 @@ class LoginViewState extends State<LoginView> implements LoginContract {
   }
 
   @override
-  void loginFailed(String message) {
+  void onLoginFailed(String message) {
     print("Error: " + message);
   }
 
   @override
-  void loginSuccessful() {
+  void onLoginSuccessful() {
     print("Successful");
   }
 }

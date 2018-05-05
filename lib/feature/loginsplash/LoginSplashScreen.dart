@@ -1,6 +1,6 @@
-import 'package:fanzactive/screens/login/LoginView.dart';
-import 'package:fanzactive/screens/ui/LoginBackgroundGradient.dart';
-import 'package:fanzactive/screens/ui/button/PrimaryLightOutlineButton.dart';
+import 'package:fanzactive/feature/login/LoginView.dart';
+import 'package:fanzactive/feature/ui/LoginBackgroundGradient.dart';
+import 'package:fanzactive/feature/ui/button/PrimaryLightOutlineButton.dart';
 import 'package:flutter/material.dart';
 
 class LoginSplash extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:fanzactive/screens/ui/res/colors.dart';
+import 'package:fanzactive/feature/ui/res/colors.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryLightOutlineButton extends StatefulWidget {
