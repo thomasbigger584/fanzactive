@@ -4,19 +4,17 @@ import 'dart:convert';
 import 'package:fanzactive/data/AuthRepository.dart';
 import 'package:fanzactive/data/domain/Token.dart';
 import 'package:fanzactive/data/exception/FetchDataException.dart';
-import 'package:http/http.dart' as http;
 
 class AuthNetworkRepository implements AuthRepository {
   final JsonDecoder _decoder = new JsonDecoder();
 
   @override
   Future<Token> login(String username, String password) {
-    return null;
-//
-//    var httpClient = createHttpClient();
-//
-//
-//
+    print("Username: " + username + " , " + password);
+    var completer = new Completer<Token>();
+    completer.completeError(new FetchDataException("Error occured"));
+    return completer.future;
+
 //    return http
 //        .post(
 //      "http://api.fanzactive.com/api/authenticate", body:

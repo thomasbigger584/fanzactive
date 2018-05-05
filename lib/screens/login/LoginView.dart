@@ -19,12 +19,6 @@ class LoginViewState extends State<LoginView> implements LoginContract {
   }
 
   @override
-  void initState() {
-    super.initState();
-    presenter = new LoginPresenter(this);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: buildAppBar,
@@ -35,12 +29,14 @@ class LoginViewState extends State<LoginView> implements LoginContract {
           child: new Column(
             children: <Widget>[
               new LoginTextBox(
+                controller: presenter.loginTextEditController,
                 hintText: "Username",
                 keyboardType: TextInputType.text,
               ),
               new Container(
                 margin: EdgeInsets.only(top: 20.0),
                 child: new LoginTextBox(
+                  controller: presenter.passwordTextEditController,
                   hintText: "Password",
                   keyboardType: TextInputType.text,
                   obscureText: true,
@@ -49,7 +45,7 @@ class LoginViewState extends State<LoginView> implements LoginContract {
               new Container(
                 margin: EdgeInsets.only(top: 30.0),
                 child: new PrimaryLightOutlineButton(
-                  onPressed: () => {},
+                  onPressed: () => presenter.login(),
                   text: "Login",
                 ),
               ),
