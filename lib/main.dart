@@ -1,6 +1,6 @@
-import 'package:fanzactive/screens/ui/res/colors.dart';
-import 'package:fanzactive/screens/login/LoginScreen.dart';
+import 'package:fanzactive/screens/login/LoginView.dart';
 import 'package:fanzactive/screens/loginsplash/LoginSplashScreen.dart';
+import 'package:fanzactive/screens/ui/res/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -25,7 +25,7 @@ class FanzActiveApplication extends StatelessWidget {
       home: new LoginSplash(),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        "/login": (context) => new Login(),
+        "/login": (context) => new LoginView(),
       },
     );
   }

@@ -1,4 +1,4 @@
-import 'package:fanzactive/screens/login/LoginScreen.dart';
+import 'package:fanzactive/screens/login/LoginView.dart';
 import 'package:fanzactive/screens/ui/LoginBackgroundGradient.dart';
 import 'package:fanzactive/screens/ui/button/PrimaryLightOutlineButton.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ class LoginSplash extends StatelessWidget {
         text: "Login",
         onPressed: () {
           Navigator.push(context,
-              new MaterialPageRoute(builder: (context) => new Login()));
+              new MaterialPageRoute(builder: (context) => new LoginView()));
         },
       ),
     );

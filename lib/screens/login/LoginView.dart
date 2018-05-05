@@ -1,18 +1,31 @@
 import 'package:fanzactive/screens/login/LoginContract.dart';
+import 'package:fanzactive/screens/login/LoginPresenter.dart';
 import 'package:fanzactive/screens/ui/LoginBackgroundGradient.dart';
 import 'package:fanzactive/screens/ui/button/PrimaryLightOutlineButton.dart';
 import 'package:fanzactive/screens/ui/res/colors.dart';
 import 'package:fanzactive/screens/ui/textbox/LoginTextBox.dart';
 import 'package:flutter/material.dart';
 
-class LoginViewImpl implements LoginView {
-  BuildContext context;
-  LoginCallback _loginCallback;
+class LoginView extends StatefulWidget {
+  @override
+  LoginViewState createState() => new LoginViewState();
+}
 
-  LoginViewImpl(this.context);
+class LoginViewState extends State<LoginView> implements LoginContract {
+  LoginPresenter presenter;
+
+  LoginViewState() {
+    presenter = new LoginPresenter(this);
+  }
 
   @override
-  Widget buildContent() {
+  void initState() {
+    super.initState();
+    presenter = new LoginPresenter(this);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return new Scaffold(
       appBar: buildAppBar,
       body: new Container(
@@ -36,7 +49,7 @@ class LoginViewImpl implements LoginView {
               new Container(
                 margin: EdgeInsets.only(top: 30.0),
                 child: new PrimaryLightOutlineButton(
-                  onPressed: _loginCallback,
+                  onPressed: () => {},
                   text: "Login",
                 ),
               ),
@@ -62,12 +75,12 @@ class LoginViewImpl implements LoginView {
   }
 
   @override
-  // ignore: unnecessary_getters_setters
-  set loginCallback(LoginCallback loginCallback) {
-    _loginCallback = loginCallback;
+  void loginFailed(String message) {
+    print("Error: " + message);
   }
 
   @override
-  // ignore: unnecessary_getters_setters
-  get loginCallback => _loginCallback;
+  void loginSuccessful() {
+    print("Successful");
+  }
 }

@@ -1,24 +1,24 @@
-import 'dart:ui';
-
+import 'package:fanzactive/data/AuthRepository.dart';
+import 'package:fanzactive/data/exception/FetchDataException.dart';
+import 'package:fanzactive/di/Injector.dart';
 import 'package:fanzactive/screens/login/LoginContract.dart';
-import 'package:fanzactive/screens/login/LoginScreen.dart';
 
-class LoginPresenterImpl extends LoginPresenter {
-  LoginState state;
-  LoginView view;
+class LoginPresenter {
+  LoginContract view;
+  AuthRepository authRepository;
 
-  LoginPresenterImpl(this.view);
+  LoginPresenter(this.view) {
+    authRepository = new Injector().authRepository;
+  }
 
-  @override
-  VoidCallback onInitView(LoginState state) => () {
-        this.state = state;
-        view.loginCallback = login;
-      };
-
-  @override
   void login(String username, String password) {
-    reState(() {
-      print("Username: " + username + " Password: " + password);
+    authRepository
+        .login(username, password)
+        .then(
+          (token) => view.loginSuccessful(),
+        )
+        .catchError((FetchDataException error) {
+      view.loginFailed(error.toString());
     });
   }
 }
