@@ -36,8 +36,12 @@ class LoginSplash extends StatelessWidget {
       child: new PrimaryLightOutlineButton(
         text: "Login",
         onPressed: () {
-          Navigator.push(context,
-              new MaterialPageRoute(builder: (context) => new LoginView()));
+          Navigator.push(
+            context,
+            new MaterialPageRoute(
+              builder: (context) => new LoginView(),
+            ),
+          );
         },
       ),
     );

@@ -23,6 +23,7 @@ class S extends WidgetsLocalizations {
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
+
 }
 
 class en extends S {
